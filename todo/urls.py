@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from product.views import homepage
+from product.views import homepage, secom
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homepage, name="home"),
     path("test/", test, name="test"),
+    path("test2", secom)
 ]
