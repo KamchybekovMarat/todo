@@ -15,14 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from product.views import homepage, secom
-from django.conf import.settings
-from django conf. urls. static import static
+from main.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", homepage, name="home"),
-    path("test/", test, name="test"),
-    path("test2", secom)
-]   + static (settings.STATIC_URL, document_root=settings. STATIC_ROOT) \
-    + static (settings.MEDIA_URL, document_root=settings. MEDIA_ROOT)
+    path('', homepage, name='home'),
+    path('test/', test, name='test'),
+    path('test2/', second, name='test2'),
+    path('book-store/', bookStore, name='bookstore')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
